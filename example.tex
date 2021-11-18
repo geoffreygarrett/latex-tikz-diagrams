@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{tikz}
+
+% relative positioning
+\usetikzlibrary{positioning}
+
+% braces
+\usetikzlibrary{decorations.pathreplacing}
+
+% autoencoder
+\usetikzlibrary{positioning,arrows.meta,calc}
+
+% actvation functions tikz
+\usepackage{subfigure}
+\usepackage{pgfplots}
+\usepackage[top=3cm,left=3cm,right=3cm,bottom=3cm]{geometry}
+% Scriptsize axis style.
+\pgfplotsset{every axis/.append style={tick label style={/pgf/number format/fixed},font=\scriptsize,ylabel near ticks,xlabel near ticks,grid=major}}
+
+\def\layersep{3em}
+\def\transferx{9em}
+\def\hiddenx{7em}
+\def\hiddenxn{12em}
+
+\begin{document}
+
+    % perceptron
+    \begin{figure}[!htp]
+        \centering
+        \input{perceptron.tex}
+        \caption{Anatomy of a perceptron.}
+        \label{fig:perceptron}
+    \end{figure}
+
+    % mlp
+    \begin{figure}[!htp]
+        \centering
+        \input{mlp.tex}
+        \caption{Anatomy of a deep feedfoward network, also called feedforward neural networks, or multilayer perceptrons (MLPs).}
+        \label{fig:mlp}
+    \end{figure}
+
+    % mlp vector notation
+    \begin{figure}[!htp]
+        \centering
+        \input{mlp-vec.tex}
+        \caption{Alternative notation of a deep feedfoward network, also called feedforward neural networks, or multilayer perceptrons (MLPs).}
+        \label{fig:mlp-vec}
+    \end{figure}
+
+    \input{activation.tex}
+    \input{autoencoder.tex}
+    \input{agent-environment.tex}
+\end{document}
