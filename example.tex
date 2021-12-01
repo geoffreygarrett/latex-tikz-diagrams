@@ -1,34 +1,50 @@
-\documentclass{article}
+\documentclass{book}
 
 \usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc,decorations.pathreplacing}
+%\usepackage[dvipsnames]{xcolor}
 
 % relative positioning
-\usetikzlibrary{positioning}
+%\usetikzlibrary{positioning}
 
 % braces
-\usetikzlibrary{decorations.pathreplacing}
+%\usetikzlibrary{decorations.pathreplacing}
 
 % autoencoder
-\usetikzlibrary{positioning,arrows.meta,calc}
+%\usetikzlibrary{positioning,arrows.meta,calc,decorations.pathreplacing}
 
 % actvation functions tikz
 \usepackage{subfigure}
 \usepackage{pgfplots}
-\usepackage[top=3cm,left=3cm,right=3cm,bottom=3cm]{geometry}
+\pgfplotsset{compat=1.16}
+\usepackage[top=3cm,left=3cm,right=3cm,bottom=3cm,
+%    showframe
+]{geometry}
 % Scriptsize axis style.
 \pgfplotsset{every axis/.append style={tick label style={/pgf/number format/fixed},font=\scriptsize,ylabel near ticks,xlabel near ticks,grid=major}}
 
-\def\layersep{3em}
-\def\transferx{9em}
-\def\hiddenx{7em}
-\def\hiddenxn{12em}
+%\def\layersep{3em}
+%\def\transferx{9em}
+%\def\hiddenx{7em}
+%\def\hiddenxn{12em}
 
 \begin{document}
+
+    % venn
+    \begin{figure}[!htp]
+        \centering
+        \input{src/ai-ml-dl.tex}
+        \caption{
+            The relation between the field of Artificial Intelligence,
+            Machine Learning, Deep Learning and Reinforcement Learning.
+        }
+        \label{fig:al-ml-dl}
+    \end{figure}
 
     % perceptron
     \begin{figure}[!htp]
         \centering
-        \input{perceptron.tex}
+        \input{src/perceptron.tex}
         \caption{Anatomy of a perceptron.}
         \label{fig:perceptron}
     \end{figure}
@@ -36,7 +52,7 @@
     % mlp
     \begin{figure}[!htp]
         \centering
-        \input{mlp.tex}
+        \input{src/mlp.tex}
         \caption{Anatomy of a deep feedfoward network, also called feedforward neural networks, or multilayer perceptrons (MLPs).}
         \label{fig:mlp}
     \end{figure}
@@ -44,12 +60,12 @@
     % mlp vector notation
     \begin{figure}[!htp]
         \centering
-        \input{mlp-vec.tex}
+        \input{src/mlp-vec.tex}
         \caption{Alternative notation of a deep feedfoward network, also called feedforward neural networks, or multilayer perceptrons (MLPs).}
         \label{fig:mlp-vec}
     \end{figure}
 
-    \input{activation.tex}
-    \input{autoencoder.tex}
-    \input{agent-environment.tex}
+    \input{src/activation.tex}
+    \input{src/autoencoder.tex}
+    \input{src/agent-environment.tex}
 \end{document}

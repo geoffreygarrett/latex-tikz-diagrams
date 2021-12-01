@@ -56,10 +56,17 @@
 \def\weightslabel{weights}                 % input vector symbol
 \def\biassymbol{$b$}                       % bias symbol
 
+\def\layersep{3em}
+\def\transferx{9em}
+\def\hiddenx{7em}
+\def\hiddenxn{12em}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TIKZ PICTURE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tikzpicture}
+    \usetikzlibrary{positioning, decorations.pathreplacing}
+
     \node[function] at ({\transferx}, -{int(2)})  (transfer) {\transfersymbol};
     \node[function, right=3em of transfer] (activation) {\activationsymbol};
     \node[below of=activation,font=\scriptsize,text width=3em] {\activationlabel};
